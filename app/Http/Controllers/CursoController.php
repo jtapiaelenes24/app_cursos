@@ -10,14 +10,15 @@ class CursoController extends Controller
 
     public function index()
     {
-        return ('Bienvenidos a la página de cursos');
+        return view('cursos.index');
     }
     public function create()
     {
-        return ("Página para crear nuevos cursos");
+        return view('cursos.create');
     }
     public function show($curso)
     {
-        return ("Bienvenidos a la página del curso $curso");
+        // la funcion compact sirve para pasar la variable $curso
+        return view('cursos.show', compact('curso'));
     }
 }

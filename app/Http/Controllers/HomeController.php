@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     //
+
     public function __invoke()
     {
-        return ('Bienvenido Jordi a la página Home');
+        // Devuelve el archivo que esta dentro de la carpeta views (home.php)
+        return view('home');
     }
 }

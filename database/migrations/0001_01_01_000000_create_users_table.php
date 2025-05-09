@@ -4,6 +4,10 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+// php artisan migrate -> Sirve para ejecutar nuestra migraciones
+// php artisan migrate:rollback -> Sirve para revertir última migración
+// php artisan migrate:refresh -> Sirve para elimar las tablas creadas y realizar las migraciones nuevamente.
+
 return new class extends Migration
 {
     /**
