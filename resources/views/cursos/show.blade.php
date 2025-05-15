@@ -12,7 +12,8 @@
             class="text-gray-300 bg-slate-950 hover:bg-slate-700 ease-in duration-200 rounded p-2">
             Volver a Cursos
         </a>
-        <a href="" class="ml-3 text-gray-300 bg-slate-950 hover:bg-slate-700 ease-in duration-200 rounded p-2">
+        <a href="{{ route('cursos.edit', $curso) }}"
+            class="ml-3 text-gray-300 bg-slate-950 hover:bg-slate-700 ease-in duration-200 rounded p-2">
             Editando Cursos
         </a>
 
