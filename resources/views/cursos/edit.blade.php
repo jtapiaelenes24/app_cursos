@@ -14,10 +14,14 @@
 
             <label for="">
                 Nombre: <br>
-                <!-- el método old() sirve para devolver los valores de un campo de la bbdd -->
+                <!-- el método old() sirve para devolver los datos de entrada antiguos de un formulario -->
                 <input type="text" name="name" value="{{ old('name', $curso->name) }}"
                     class="p-2 rounded-md mt-1 w-full border border-2 border-lime-200 outline-none">
             </label>
+
+            @error('name')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
 
             <br><br>
 
@@ -27,6 +31,10 @@
                     class="p-2 rounded-md mt-1 w-full border border-2 border-lime-200 outline-none">{{ old('description', $curso->description) }}</textarea>
             </label>
 
+            @error('description')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
+
             <br><br>
 
             <label for="">
@@ -34,6 +42,10 @@
                 <input type="text" name="categoria" value="{{ old('categoria', $curso->categoria) }}"
                     class="p-2 rounded-md mt-1 w-full border border-2 border-lime-200 outline-none">
             </label>
+
+            @error('categoria')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
 
             <br><br>
 

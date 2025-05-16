@@ -22,14 +22,25 @@ class CursoController extends Controller
 
     public function store(Request $request)
     {
-        // return $request->all(); // Devuelve todo el contenido del objeto Request
-        $curso = new Curso();
 
-        $curso->name = $request->name;
-        $curso->description = $request->description;
-        $curso->categoria = $request->categoria;
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'categoria' => 'required'
+        ]);
 
-        $curso->save();
+        // $curso = new Curso();
+
+        // // Saneamos el código para evitar inyecciones sql
+        // $curso->name = filter_var($request->name, FILTER_SANITIZE_STRING);
+        // $curso->description = $request->description;
+        // $curso->categoria = $request->categoria;
+
+        // $curso->save();
+
+        ### ASIGNACIÓN MASIVA ###
+        $curso = Curso::create($request->all());
+
 
         return redirect()->route('cursos.show', $curso);
     }
@@ -47,11 +58,20 @@ class CursoController extends Controller
 
     public function update(Request $request, Curso $curso)
     {
-        $curso->name = $request->name;
-        $curso->description = $request->description;
-        $curso->categoria = $request->categoria;
 
-        $curso->save();
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'categoria' => 'required'
+        ]);
+
+        // $curso->name = $request->name;
+        // $curso->description = $request->description;
+        // $curso->categoria = $request->categoria;
+
+        // $curso->save();
+
+        $curso->update($request->all());
 
         return redirect()->route('cursos.show', $curso);
     }

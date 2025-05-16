@@ -12,25 +12,38 @@
 
             <label for="">
                 Nombre: <br>
-                <input type="text" name="name"
+                <input type="text" value="{{ old('name') }}" name="name"
                     class="p-2 rounded-md mt-1 w-full border border-2 border-lime-200 outline-none">
             </label>
+
+            @error('name')
+                <!-- Lanza un mensaje de error si el campo obligatorio está vacío -->
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
 
             <br><br>
 
             <label for="">
                 Descripción: <br>
                 <textarea rows="5" name="description"
-                    class="p-2 rounded-md mt-1 w-full border border-2 border-lime-200 outline-none"></textarea>
+                    class="p-2 rounded-md mt-1 w-full border border-2 border-lime-200 outline-none">{{ old('description') }}</textarea>
             </label>
+
+            @error('description')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
 
             <br><br>
 
             <label for="">
                 Categoría: <br>
-                <input type="text" name="categoria"
+                <input type="text" value="{{ old('categoria') }}" name="categoria"
                     class="p-2 rounded-md mt-1 w-full border border-2 border-lime-200 outline-none">
             </label>
+
+            @error('categoria')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
 
             <br><br>
 
