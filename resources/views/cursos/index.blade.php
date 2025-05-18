@@ -12,7 +12,7 @@
     <ul class="my-10 bg-slate-100 p-5 leading-7 text-red-500 border-y-8">
         @foreach ($cursos as $curso)
             <li class="border-b-2 pt-2 border-gray-200 hover:text-slate-500"><a
-                    href="{{ route('cursos.show', $curso->id) }}">{{ $curso->name }}</a></li>
+                    href="{{ route('cursos.show', $curso) }}">{{ $curso->name }}</a></li>
         @endforeach
     </ul>
 
